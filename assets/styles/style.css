@@ -33,6 +33,12 @@ p {
     font-size: 2.22vmin;
 }
 
+.text_title {
+    font-weight: bolder;
+    font-size: 6.667vmin;
+    line-height: 8vmin;
+}
+
 .image {
     max-width: 100%;
 }
@@ -45,6 +51,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #ffffff;
 }
 .header__logo {
     width: 15rem;
@@ -86,6 +93,7 @@ p {
     position: fixed;
     bottom: 0px;
     height: 12.44vmin;
+    width: 100vw;
     padding-left: 7.57vmax;
 
     display: flex;
@@ -101,24 +109,7 @@ p {
 .nav__item:hover {
     color: #5222d0;
 }
-@media screen and (max-width: 699px) {
-    .text {
-        font-size: 1.44vmax;
-    }
 
-    .header {
-        background-color: #ffffff;
-    }
-    .text_roboto-slab {
-        font-size: 2.22vmax;
-    }
-    .header__btn {
-        padding-right: 2rem;
-    }
-    .nav {
-        padding: 4vw 2vw;
-    }
-}
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -133,11 +124,7 @@ p {
 .main-page__title {
     margin-bottom: 1vmin;
 }
-.text_title {
-    font-weight: bolder;
-    font-size: 6.667vmin;
-    line-height: 8vmin;
-}
+
 .main-page__subtitle {
     margin-bottom: 3vmin;
     padding-right: 15%;
@@ -158,9 +145,81 @@ p {
 .art__image {
 }
 
+.about {
+    margin-bottom: 12.44vmin;
+}
+.about__title {
+    margin-left: 8.68vmax;
+    margin-bottom: 1vmin;
+}
+.card {
+    margin-left: 6.25vmax;
+    margin-right: 2.78vmax;
+    display: flex;
+}
+.card__item {
+    border: 1px solid transparent;
+}
+
+.card__item:hover {
+    border: 1px solid #bb2247;
+}
+.card__item-container {
+    height: 100%;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.card__img {
+}
+.card__title {
+    font-weight: bolder;
+    font-size: 3.33vmin;
+    line-height: 4vmin;
+}
+.card__desc {
+}
+@media screen and (max-width: 767px) {
+    .text {
+        font-size: 1.44vmax;
+    }
+    .text_title {
+        font-size: 6.667vmin;
+    }
+    .text_roboto-slab {
+        font-size: 2.22vmax;
+    }
+    .card__title {
+        font-size: 3.33vmin;
+    }
+    .header__btn {
+        padding-right: 2rem;
+    }
+    .nav {
+        padding: 4vw 2vw;
+    }
+}
 @media screen and (min-width: 1024px) {
     .main-page {
         flex: 1 0 40vw;
         width: 40vw;
     }
 }
+@media screen and (min-width: 768px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 54vmin 26.7vmin;
+    }
+}
+/* doesnt work bc height is 100% 
+@media screen and (min-width: 1024px) {
+    .card__img {
+        padding-top: 2vh;
+    }
+    .card__desc {
+        padding-bottom: 2vh;
+    }
+} */
