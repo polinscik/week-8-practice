@@ -52,6 +52,8 @@ p {
     flex-direction: row;
     justify-content: space-between;
     background-color: #ffffff;
+    box-sizing: border-box;
+    padding-bottom: 2vmin;
 }
 .header__logo {
     width: 15rem;
@@ -63,24 +65,22 @@ p {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-
     background-color: #5222d0;
     color: #ffffff;
     text-decoration: none;
 }
 .btn__text {
     font-weight: bolder;
-
     letter-spacing: 0.05em;
 }
 .header__btn-icon {
-    width: 1.3rem;
-    margin-top: -0.2rem;
-    margin-left: 0.5rem;
+    width: 2em;
+    margin-top: -0.2em;
+    margin-left: 0.5em;
 }
 
 .header__btn {
-    padding: 1rem 1.4rem;
+    padding: 1em 1.4em;
     margin-right: 5.28vmax;
     margin-top: 5.5vmin;
     align-self: flex-end;
@@ -95,18 +95,19 @@ p {
     height: 12.44vmin;
     width: 100vw;
     padding-left: 7.57vmax;
-
+    box-sizing: border-box;
+    padding-top: 1.5vmin;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     background-color: #ffffff;
 }
-.nav__item {
+.nav__link {
     text-decoration: none;
     color: #000;
     margin: 0 1.181vmax;
 }
-.nav__item:hover {
+.nav__link:hover {
     color: #5222d0;
 }
 
@@ -138,11 +139,10 @@ p {
 }
 .main-page__btn-icon {
     margin-left: 0.5em;
+    width: 1em;
 }
 .art {
     margin-top: 14.22vmin;
-}
-.art__image {
 }
 
 .about {
@@ -157,15 +157,8 @@ p {
     margin-right: 2.78vmax;
     display: flex;
 }
-.card__item {
-    border: 1px solid transparent;
-}
 
-.card__item:hover {
-    border: 1px solid #bb2247;
-}
 .card__item-container {
-    height: 100%;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
     display: flex;
@@ -173,53 +166,130 @@ p {
     justify-content: space-evenly;
 }
 .card__img {
+    padding-bottom: 2vmin;
 }
 .card__title {
     font-weight: bolder;
     font-size: 3.33vmin;
     line-height: 4vmin;
+    padding-top: 1.5vmin;
+    padding-bottom: 1.5vmin;
 }
-.card__desc {
+.card__email {
+    opacity: 1;
+    color: #000;
 }
+
+.card__item_pink {
+    background-color: #ec615b;
+    color: #ffffff;
+    height: fit-content;
+    padding-bottom: 6vmin;
+}
+
+.card__btn {
+    padding: 1rem 1.4rem;
+    align-self: flex-start;
+    font-size: 1.44vmin;
+    border-radius: 40% /110%;
+}
+
 @media screen and (max-width: 767px) {
-    .text {
-        font-size: 1.44vmax;
-    }
     .text_title {
         font-size: 6.667vmin;
     }
     .text_roboto-slab {
         font-size: 2.22vmax;
+        line-height: unset;
     }
     .card__title {
-        font-size: 3.33vmin;
+        font-size: 2.53vmax;
+        padding-top: 2vmin;
+        line-height: unset;
+    }
+    .header__logo {
+        padding-left: 0;
     }
     .header__btn {
-        padding-right: 2rem;
+        font-size: 1.64vmax;
+        padding-right: 2em;
     }
     .nav {
         padding: 4vw 2vw;
+        height: fit-content;
+    }
+    .about__title {
+        margin-top: 2vmin;
+    }
+    .card {
+        flex-direction: column;
+        margin-left: calc(4vmax - 1.5vw);
+    }
+    .card__img {
+        padding-top: 3vmin;
+    }
+    .card__item {
+        margin-top: 2vmin;
+        margin-bottom: 2vmin;
+    }
+    .card__btn {
+        font-size: unset;
+    }
+    .main-page {
+        margin-left: 4vmax;
+    }
+    .art__image {
+        margin: auto;
+    }
+    .about__title {
+        margin-left: 4vmax;
+    }
+    .main-page__btn-icon {
+        width: 1.5em;
     }
 }
+
 @media screen and (min-width: 1024px) {
     .main-page {
         flex: 1 0 40vw;
         width: 40vw;
     }
-}
-@media screen and (min-width: 768px) {
-    .card {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 54vmin 26.7vmin;
-    }
-}
-/* doesnt work bc height is 100% 
-@media screen and (min-width: 1024px) {
     .card__img {
         padding-top: 2vh;
     }
     .card__desc {
-        padding-bottom: 2vh;
+        margin-bottom: 2vh;
     }
-} */
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1547px) and (min-width: 1024px) {
+    .art {
+        max-width: 40%;
+    }
+    .about__title {
+        margin-top: 2vmin;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .art {
+        margin-top: 1vmin;
+        display: flex;
+        justify-content: center;
+    }
+    .art__image {
+        width: 70%;
+    }
+    .card__btn {
+        margin: 2vmin 0;
+    }
+    .card__item_pink {
+        height: fit-content;
+    }
+}
